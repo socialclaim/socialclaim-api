@@ -28,7 +28,7 @@ get '/wallets' do
     url: ENV['VUE_APP_VENLY_API_URL'],
     headers: {'Content-Type' => 'application/json', 'Authorization' => "Bearer #{token}" }
   )
-  wallets_response = conn.get('/api/wallets')
+  wallets_response = conn.get('/api/wallets?includeBalance=false')
   content_type :json
   wallets_response.body.to_json
 end
