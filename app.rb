@@ -2,10 +2,11 @@ require 'sinatra'
 require 'faraday'
 require 'uri'
 
-# set :allow_origin, "https://socialclaim.notifier.sh http://localhost:3000"
-# set :allow_methods, "GET,HEAD,POST"
-# set :allow_headers, "content-type,if-modified-since"
-# set :expose_headers, "location,link"
+set :allow_origin, "https://socialclaim.notifier.sh http://localhost:3000"
+set :allow_methods, "GET,HEAD,POST"
+set :allow_headers, "content-type,if-modified-since"
+set :expose_headers, "location,link"
+
 
 get '/wallets' do
   conn = Faraday.new(
